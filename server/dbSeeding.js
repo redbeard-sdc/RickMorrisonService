@@ -4,7 +4,7 @@ const fs = require('fs');
 
 const createRandomPrice = () => Math.floor(Math.random() * 100) + 100;
 
-const columnNames = ['id', 'day', 'roomAvail', 'Priceline', 'Booking', 'Hotels',
+const columnNames = ['day', 'roomAvail', 'Priceline', 'Booking', 'Hotels',
   'OfficialHotelSite', 'Expedia', 'TripAdvisor', 'Orbitz', 'Hotwire', 'Agoda', 'CheapTickets'];
 
 const createDailyPrices = () => {
@@ -12,7 +12,6 @@ const createDailyPrices = () => {
   for (let j = 0; j < 1000; j += 1) {
     let fakeDays = '\n';
     for (let i = 0; i <= 10000; i += 1) {
-      let id = i;
       let day = i;
       let roomAvail = Math.random() > 0.1;
       let Priceline = createRandomPrice();
@@ -26,7 +25,7 @@ const createDailyPrices = () => {
       let Agoda = createRandomPrice();
       let CheapTickets = createRandomPrice();
 
-      let dailyPrices = `${id}, ${day}, ${roomAvail}, ${Priceline}, ${Booking}, ${Hotels}, ${OfficialHotelSite}, ${Expedia}, ${TripAdvisor}, ${Orbitz}, ${Hotwire}, ${Agoda}, ${CheapTickets}`;
+      let dailyPrices = `${day}, ${roomAvail}, ${Priceline}, ${Booking}, ${Hotels}, ${OfficialHotelSite}, ${Expedia}, ${TripAdvisor}, ${Orbitz}, ${Hotwire}, ${Agoda}, ${CheapTickets}`;
 
       fakeDays += `${dailyPrices}\n`;
     }

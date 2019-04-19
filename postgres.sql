@@ -34,11 +34,9 @@ CREATE TABLE pricing (
 -- );
 
 -- CREATE TABLE pricing (
+--   id SERIAL,
 --   hotel_id REFERENCES hotels(id),
 --   dates_id REFERENCES dates(id),
---   numRooms int(11) DEFAULT NULL,
---   numAdults int(11) DEFAULT NULL,
---   numChildren int(11) DEFAULT NULL,
 --   roomAvail BOOLEAN,
 --   Priceline int(11) DEFAULT NULL,
 --   Booking int(11) DEFAULT NULL,
@@ -49,7 +47,8 @@ CREATE TABLE pricing (
 --   Orbitz int(11) DEFAULT NULL,
 --   Hotwire int(11) DEFAULT NULL,
 --   Agoda int(11) DEFAULT NULL,
---   CheapTickets int(11) DEFAULT NULL
+--   CheapTickets int(11) DEFAULT NULL,
+--   PRIMARY KEY (id)
 -- );
 
   -- id SERIAL,
