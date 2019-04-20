@@ -55,7 +55,7 @@ class App extends Component {
     const bookDay = (Number(bookArr[0]) * 12) + (Number(bookArr[1])) + (Number(bookArr[2]) * 365);
     const day = bookDay - currentDay;
 
-    fetch(`/prices/${day}`)
+    fetch(`http://localhost:3003/prices/${day}`)
       .then(res => res.json())
       .then((data) => {
         const tupleArray = Object.entries(data.result[0]);
