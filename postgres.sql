@@ -8,20 +8,20 @@ CREATE TABLE pricing (
   id SERIAL,
   day INT,
   roomAvail BOOLEAN,
-  Priceline INT DEFAULT NULL,
-  Booking INT DEFAULT NULL,
-  Hotels INT DEFAULT NULL,
-  OfficialHotelSite INT DEFAULT NULL,
-  Expedia INT DEFAULT NULL,
-  TripAdvisor INT DEFAULT NULL,
-  Orbitz INT DEFAULT NULL,
-  Hotwire INT DEFAULT NULL,
-  Agoda INT DEFAULT NULL,
-  CheapTickets INT DEFAULT NULL,
+  Priceline VARCHAR(20),
+  Booking VARCHAR(20),
+  Hotels VARCHAR(20),
+  OfficialHotelSite VARCHAR(20),
+  Expedia VARCHAR(20),
+  TripAdvisor VARCHAR(20),
+  Orbitz VARCHAR(20),
+  Hotwire VARCHAR(20),
+  Agoda VARCHAR(20),
+  CheapTickets VARCHAR(20),
   PRIMARY KEY (id)
 );
 
-INSERT INTO pricing VALUES (0,0,true,163,167,174,146,190,178,183,179,190,183);
+-- INSERT INTO pricing VALUES (0,0,true,163,167,174,146,190,178,183,179,190,183);
 
 -- CREATE TABLE hotels (
 --   id SERIAL,

@@ -2,7 +2,7 @@ const pool = require('./db');
 
 const getPricesByDay = (req, res) => {
   const { day } = req.params;
-  const sql = `SELECT * FROM pricing WHERE day=${day};`;
+  const sql = `SELECT * FROM pricing WHERE id=${day + 1};`;
 
   pool.query(sql, (err, results) => {
     if (err) {
