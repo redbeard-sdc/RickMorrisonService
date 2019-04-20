@@ -21,7 +21,6 @@ module.exports = {
   ],
   rules: {
     "indent": ["error", 2],
-    "linebreak-style": ["error", "windows"],
     "react/destructuring-assignment": "off",
     "react/no-access-state-in-setstate": "off",
     "jsx-a11y/click-events-have-key-events": "off",
@@ -29,6 +28,9 @@ module.exports = {
     "react/prop-types": "off",
     "react/no-children-prop": "off",
     "react/jsx-filename-extension": "off",
+    "no-console": "off",
+    "linebreak-style": "off",
+    "import/extensions": "off",
   },
   
 };

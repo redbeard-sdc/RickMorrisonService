@@ -9,7 +9,7 @@
   "scripts": {
     "webpack": "webpack --mode development --host 0.0.0.0 --watch",
     "start": "concurrently \"npm run webpack\" \"npm run server\"",
-    "server": "nodemon server/index.js",
+    "server": "nodemon server/server.js",
     "seedOld": "mysql -u root < schema.sql",
     "seed": "node server/dbSeeding.js",
     "test": "jest --detectOpenHandles",
@@ -31,6 +31,7 @@
     "mysql-server": "^1.0.5",
     "node-fetch": "^2.3.0",
     "nodemon": "^1.18.10",
+    "pg": "^7.10.0",
     "react": "^16.8.5",
     "react-calendar": "^2.18.1",
     "react-date-picker": "^7.4.0",

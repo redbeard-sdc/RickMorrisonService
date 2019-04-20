@@ -1,25 +1,27 @@
-DROP DATABASE IF EXISTS hotelPricing;
+DROP DATABASE IF EXISTS hotel_pricing;
 
-CREATE DATABASE hotelPricing;
+CREATE DATABASE hotel_pricing;
 
-\c hotelPricing;
+\c hotel_pricing;
 
 CREATE TABLE pricing (
   id SERIAL,
-  day int(11) DEFAULT NULL,
+  day INT,
   roomAvail BOOLEAN,
-  Priceline int(11) DEFAULT NULL,
-  Booking int(11) DEFAULT NULL,
-  Hotels int(11) DEFAULT NULL,
-  OfficialHotelSite int(11) DEFAULT NULL,
-  Expedia int(11) DEFAULT NULL,
-  TripAdvisor int(11) DEFAULT NULL,
-  Orbitz int(11) DEFAULT NULL,
-  Hotwire int(11) DEFAULT NULL,
-  Agoda int(11) DEFAULT NULL,
-  CheapTickets int(11) DEFAULT NULL,
+  Priceline INT DEFAULT NULL,
+  Booking INT DEFAULT NULL,
+  Hotels INT DEFAULT NULL,
+  OfficialHotelSite INT DEFAULT NULL,
+  Expedia INT DEFAULT NULL,
+  TripAdvisor INT DEFAULT NULL,
+  Orbitz INT DEFAULT NULL,
+  Hotwire INT DEFAULT NULL,
+  Agoda INT DEFAULT NULL,
+  CheapTickets INT DEFAULT NULL,
   PRIMARY KEY (id)
 );
+
+INSERT INTO pricing VALUES (0,0,true,163,167,174,146,190,178,183,179,190,183);
 
 -- CREATE TABLE hotels (
 --   id SERIAL,

@@ -6,12 +6,15 @@ import GuestSelector from './GuestSelector';
 import SiteDisplay from './SiteDisplay';
 import OtherPrices from './OtherPrices';
 import '../assets/FontAwesomeIcons';
-import { wrapper, checkIn, checkInOut, checkOut, guestSelectorBox, guests, guestList, siteBoxes, siteDisplay, viewingHotel } from '../../public/css.css';
+import {
+  wrapper, checkIn, checkInOut, checkOut, guestSelectorBox, guests, guestList, siteBoxes, siteDisplay, viewingHotel,
+} from '../../public/css.css';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserFriends} from '@fortawesome/free-solid-svg-icons';
+import { faUserFriends } from '@fortawesome/free-solid-svg-icons';
 import CheckInAndOut from './CheckInAndOut';
-library.add(faUserFriends)
+
+library.add(faUserFriends);
 
 // import { library } from '@fortawesome/fontawesome-svg-core';
 // import { faIgloo } from '@fortawesome/free-solid-svg-icons';
@@ -47,13 +50,16 @@ class App extends Component {
   }
 
   getLowestPrices() {
-    fetch(`/prices/${this.state.checkInDate}`)
+    const currentDay = ((new Date().getMonth() + 1) * 12) + new Date().getDate() + (new Date().getFullYear() * 365);
+    const bookArr = this.state.checkInDate.split('-');
+    const bookDay = (Number(bookArr[0]) * 12) + (Number(bookArr[1])) + (Number(bookArr[2]) * 365);
+    const day = bookDay - currentDay;
+
+    fetch(`/prices/${day}`)
       .then(res => res.json())
       .then((data) => {
         const tupleArray = Object.entries(data.result[0]);
-        const sortedArray = tupleArray.sort((a, b) => {
-          return a[1] > b[1] ? 1 : -1;
-        });
+        const sortedArray = tupleArray.sort((a, b) => (a[1] > b[1] ? 1 : -1));
         this.setState({
           lowest: sortedArray[1],
           secondLowest: sortedArray[2],
@@ -105,8 +111,7 @@ class App extends Component {
       <div className={wrapper}>
         <span className={viewingHotel}>
           <FontAwesomeIcon icon="user-friends" />
-          12 people are viewing this hotel</span>
-        <span>
+          <span>12 people are viewing this hotel</span>
           <div>
             <CheckInAndOut
               updatePrices={this.updatePrices}
@@ -118,7 +123,7 @@ class App extends Component {
               data-test="checkInAndOut"
             />
           </div>
-          <br/>
+          <br />
           <div className={guestSelectorBox}>
             <GuestSelector
               rooms={this.state.rooms}
@@ -133,7 +138,7 @@ class App extends Component {
             />
           </div>
         </span>
-        <br/>
+        <br />
         <div className={siteBoxes}>
           <div className={siteDisplay}>
             <SiteDisplay
