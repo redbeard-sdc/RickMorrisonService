@@ -26,6 +26,7 @@
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.11.2",
     "express": "^4.16.4",
+    "firebase-admin": "^7.3.0",
     "moment": "^2.24.0",
     "mysql": "^2.16.0",
     "mysql-server": "^1.0.5",

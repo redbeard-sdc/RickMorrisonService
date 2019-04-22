@@ -1,10 +1,10 @@
-const client = require('./db');
+const db_PG = require('./db_PG');
 
 const getPricesByDay = (req, res) => {
   const { day } = req.params;
   const sql = `SELECT * FROM pricing WHERE id=${Number(day) + 1};`;
 
-  client.query(sql, (err, results) => {
+  db_PG.query(sql, (err, results) => {
     if (err) {
       res.status(404).json('Cannot process request');
     } else {

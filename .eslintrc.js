@@ -31,6 +31,8 @@ module.exports = {
     "no-console": "off",
     "linebreak-style": "off",
     "import/extensions": "off",
+    "camelcase": "off",
+    "no-plusplus": "off",
   },
   
 };
