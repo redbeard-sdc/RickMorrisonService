@@ -11,7 +11,8 @@
     "start": "concurrently \"npm run webpack\" \"npm run server\"",
     "server": "nodemon server/server.js",
     "seedOld": "mysql -u root < schema.sql",
-    "seed": "node server/dbSeeding.js",
+    "seedPG": "node server/dbSeed_PG.js",
+    "seedFB": "node server/dbSeed_FB.js",
     "test": "jest --detectOpenHandles",
     "test:coverage": "jest --coverage"
   },
@@ -23,6 +24,7 @@
     "body-parser": "^1.18.3",
     "concurrently": "^4.1.0",
     "cors": "^2.8.5",
+    "csv-parser": "^2.2.0",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.11.2",
     "express": "^4.16.4",
