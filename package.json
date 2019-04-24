@@ -12,7 +12,7 @@
     "server": "nodemon server/server.js",
     "seedOld": "mysql -u root < schema.sql",
     "seedPG": "node server/dbSeed_PG.js",
-    "seedFB": "node server/dbSeed_FB.js",
+    "seedFB": "node --max-old-space-size=8192 server/dbSeed_FB.js",
     "test": "jest --detectOpenHandles",
     "test:coverage": "jest --coverage"
   },
