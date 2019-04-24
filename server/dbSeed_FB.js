@@ -5,7 +5,6 @@ const db_FB = require('./db_FB');
 fs.createReadStream('./data-small.csv')
   .pipe(csv())
   .on('data', (row) => {
-    // if (row) {
     db_FB.collection('pricing').add({
       day: row.day,
       roomAvail: row.roomAvail,
@@ -20,22 +19,20 @@ fs.createReadStream('./data-small.csv')
       Agoda: row.Agoda,
       CheapTickets: row.CheapTickets,
     });
-    // } else {
-    //   console.log('No data');
-    // }
   })
   .on('end', () => {
     console.log('CSV file successfully processed');
   });
 
+// const createRandomPrice = () => Math.floor(Math.random() * 100) + 100;
 
 // const seedFirestore = () => {
-//   for (let i = 0; i < 1; i++) {
-//     for (let j = 0; j < 100000; j++) {
-//       const docRef = db_FB.collection('pricing').doc(`${j}`);
+//   for (let i = 0; i < 1000; i++) {
+//     for (let j = 0; j < 10000; j++) {
+//       const docRef = db_FB.collection('pricing').doc(`${(i * 10000) + j}`);
 //       const availability = Math.random() > 0.1;
 //       docRef.set({
-//         day: i,
+//         day: (i * 10000) + j,
 //         roomAvail: availability,
 //         Priceline: availability ? createRandomPrice() : null,
 //         Booking: availability ? createRandomPrice() : null,

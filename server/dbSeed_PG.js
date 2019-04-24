@@ -11,7 +11,7 @@ const createDailyPrices = () => {
   for (let j = 0; j < 1000; j += 1) {
     let fakeDays = '';
     for (let i = 1; i <= 10000; i += 1) {
-      let day = i;
+      let day = (j * 10000) + i;
       let roomAvail = Math.random() > 0.1;
       let Priceline = roomAvail ? createRandomPrice() : null;
       let Booking = roomAvail ? createRandomPrice() : null;
