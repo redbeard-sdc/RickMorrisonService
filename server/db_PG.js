@@ -12,4 +12,14 @@ db_PG.connect((err) => {
   }
 });
 
+/* Using a Pool...
+
+const db_PG = new pg.Pool({
+  host: 'localhost',
+  user: 'danslaptop',
+  database: 'hotel_pricing',
+  max: 20,
+});
+*/
+
 module.exports = db_PG;

@@ -127,8 +127,7 @@ const SiteDisplay = (props) => {
       return (
         <div className={siteModule} onClick={props.onClick}>
           <span className={spanImage}>
-          Hotwire
-            {/* <img src="https://s3.us-east-2.amazonaws.com/images-bucket-09723/Hotwire_coupons__discount_codes__and_promo_codes.png" alt="TripAdvisor" height="20" /> */}
+            <img src="https://s3.us-east-2.amazonaws.com/images-bucket-09723/Hotwire_coupons__discount_codes__and_promo_codes.png" alt="Hotwire" height="50" />
           </span>
           <span className={sitePrice}>
             ${props.site[1]}
