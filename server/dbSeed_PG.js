@@ -24,7 +24,7 @@ const createDailyPrices = () => {
       let Agoda = roomAvail ? createRandomPrice() : null;
       let CheapTickets = roomAvail ? createRandomPrice() : null;
 
-      let dailyPrices = `${day}, ${roomAvail}, ${Priceline}, ${Booking}, ${Hotels}, ${OfficialHotelSite}, ${Expedia}, ${TripAdvisor}, ${Orbitz}, ${Hotwire}, ${Agoda}, ${CheapTickets}`;
+      let dailyPrices = `${day},${roomAvail},${Priceline},${Booking},${Hotels},${OfficialHotelSite},${Expedia},${TripAdvisor},${Orbitz},${Hotwire},${Agoda},${CheapTickets}`;
 
       fakeDays += `${dailyPrices}\n`;
     }

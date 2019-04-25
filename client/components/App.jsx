@@ -58,15 +58,15 @@ class App extends Component {
     fetch(`http://localhost:3003/prices/${day}`)
       .then(res => res.json())
       .then((data) => {
-        const tupleArray = Object.entries(data.result[0]);
-        const sortedArray = tupleArray.sort((a, b) => (a[1] > b[1] ? 1 : -1));
+        const tupleArray = Object.entries(data.rows[0]);
+        const sortedArray = tupleArray.sort((a, b) => (Number(a[1]) > Number(b[1]) ? 1 : -1));
         this.setState({
-          lowest: sortedArray[1],
-          secondLowest: sortedArray[2],
-          thirdLowest: sortedArray[3],
-          fourthLowest: sortedArray[4],
-          fifthLowest: sortedArray[5],
-          sixthLowest: sortedArray[6],
+          lowest: sortedArray[3],
+          secondLowest: sortedArray[4],
+          thirdLowest: sortedArray[5],
+          fourthLowest: sortedArray[6],
+          fifthLowest: sortedArray[7],
+          sixthLowest: sortedArray[8],
         });
       });
   }
