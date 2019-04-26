@@ -7,6 +7,7 @@ data-small.csv
 server/archive/login.js
 server/archive/webApiKey.js
 server/archive/sdc-hotel-pricing-238420-7e59d551eda0.json
+newrelic.js
 
 ## NPM ##
 npm

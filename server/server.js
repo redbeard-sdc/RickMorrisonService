@@ -10,11 +10,12 @@ app.use(cors());
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.json());
 
+
 // ***** Connection to PostgreSQL database *****
 
-const db_PG = require('./queries_PG');
+const { getPricesByDay, checkRedisCache } = require('./queries_PG');
 
-app.get('/prices/:day', db_PG.getPricesByDay);
+app.get('/prices/:day', checkRedisCache, getPricesByDay);
 
 
 // ***** Connection to Google Cloud Firestore database *****
