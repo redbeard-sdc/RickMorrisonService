@@ -21,6 +21,11 @@ CREATE TABLE pricing (
   PRIMARY KEY (id)
 );
 
+COPY pricing (day, roomAvail, Priceline, Booking, Hotels, OfficialHotelSite, Expedia, TripAdvisor, Orbitz, Hotwire, Agoda, CheapTickets) 
+FROM '/Users/danslaptop/ghrden01-Repos/SDC/RickMorrisonService/data.csv' DELIMITER ',' CSV HEADER;
+
+CREATE INDEX day_id ON pricing (day);
+
 /* CSV import command */
 
 -- COPY pricing (day, roomAvail, Priceline, Booking, Hotels, OfficialHotelSite, Expedia, TripAdvisor, Orbitz, Hotwire, Agoda, CheapTickets)

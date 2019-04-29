@@ -2,7 +2,7 @@ const { db_PG, client } = require('./db_PG');
 
 const getPricesByDay = (req, res) => {
   const { day } = req.params;
-  const sql = `SELECT * FROM pricing WHERE id=${Number(day) + 1};`;
+  const sql = `SELECT * FROM pricing WHERE day=${Number(day) + 1};`;
 
   db_PG.query(sql, (err, results) => {
     if (err) {

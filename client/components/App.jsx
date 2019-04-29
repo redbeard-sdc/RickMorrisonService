@@ -55,19 +55,30 @@ class App extends Component {
     const bookDay = (Number(bookArr[0]) * 12) + (Number(bookArr[1])) + (Number(bookArr[2]) * 365);
     const day = bookDay - currentDay;
 
-    fetch(`http://localhost:3003/prices/${day}`)
+    fetch(`prices/${day}`)
       .then(res => res.json())
       .then((data) => {
-        const tupleArray = Object.entries(data.rows[0]);
-        const sortedArray = tupleArray.sort((a, b) => (Number(a[1]) > Number(b[1]) ? 1 : -1));
-        this.setState({
-          lowest: sortedArray[3],
-          secondLowest: sortedArray[4],
-          thirdLowest: sortedArray[5],
-          fourthLowest: sortedArray[6],
-          fifthLowest: sortedArray[7],
-          sixthLowest: sortedArray[8],
-        });
+        if (data.rows.length > 0) {
+          const tupleArray = Object.entries(data.rows[0]);
+          const sortedArray = tupleArray.sort((a, b) => (Number(a[1]) > Number(b[1]) ? 1 : -1));
+          this.setState({
+            lowest: sortedArray[3],
+            secondLowest: sortedArray[4],
+            thirdLowest: sortedArray[5],
+            fourthLowest: sortedArray[6],
+            fifthLowest: sortedArray[7],
+            sixthLowest: sortedArray[8],
+          });
+        } else {
+          this.setState({
+            lowest: ['agoda', 'none'],
+            secondLowest: ['priceline', 'none'],
+            thirdLowest: ['hotwire', 'none'],
+            fourthLowest: ['tripadvisor', 'none'],
+            fifthLowest: ['booking', 'none'],
+            sixthLowest: ['hotels', 'none'],
+          });
+        }
       });
   }
 

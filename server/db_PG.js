@@ -1,4 +1,5 @@
 const pg = require('pg');
+const redis = require('redis');
 
 // ***** Using a Pool connection *****
 
@@ -8,26 +9,6 @@ const db_PG = new pg.Pool({
   database: 'hotel_pricing',
   max: 50,
 });
-
-// ***** Connection to Redis cache *****
-
-const redis = require('redis');
-
-const client = redis.createClient();
-
-client.on('error', () => {
-  console.log('Error connecting to Redis...');
-});
-
-client.on('connect', () => {
-  console.log('Connected to Redis client...');
-});
-
-module.exports = {
-  db_PG,
-  client,
-};
-
 
 // ***** Using a Client connection *****
 
@@ -43,3 +24,20 @@ module.exports = {
 //     console.log('hotel_pricing database connected...');
 //   }
 // });
+
+// ***** Connection to Redis cache *****
+
+const client = redis.createClient(process.env.REDISURL);
+
+client.on('error', () => {
+  console.log('Error connecting to Redis...');
+});
+
+client.on('connect', () => {
+  console.log('Connected to Redis client...');
+});
+
+module.exports = {
+  db_PG,
+  client,
+};

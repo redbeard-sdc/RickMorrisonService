@@ -11,15 +11,10 @@ WORKDIR /src/app
 COPY . /src/app
 
 # Does your app have any dependencies that should be installed?
-RUN yarn install
-RUN npm install mysql
-RUN set -ex; \
-    apt-get update; \
-    apt-get install -y --no-install-recommends \
-    mysql-client
+RUN npm install --build-from-source
 
 # What port will the container talk to the outside world with once created?
-EXPOSE 3000
+EXPOSE 3003
 
 # How do you start your app?
-CMD [ "npm", "start" ]
+CMD [ "npm", "run", "docker" ]
