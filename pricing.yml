@@ -1,11 +1,11 @@
 config:
-  target: 'http://localhost:3003'
+  target: 'http://sdc-pricing-lb-1346766040.us-east-2.elb.amazonaws.com/'
   phases:
-    - duration: 20
+    - duration: 40
       arrivalRate: 800
-  defaults:
-    headers:
-      x-my-service-auth: '987401838271002188298567'
+  # defaults:
+  #   headers:
+  #     x-my-service-auth: '987401838271002188298567'
 scenarios:
   - flow:
     - get:

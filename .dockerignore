@@ -1,1 +1,11 @@
 /node_modules
+/client
+data.csv
+webpack.config.js
+pricing.yml
+.eslintrc.js
+docker-compose.yml
+newrelic.js
+newrelic_agent.log
+postgres.sql
+.babelrc

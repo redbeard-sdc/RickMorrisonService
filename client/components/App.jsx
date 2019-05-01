@@ -55,7 +55,7 @@ class App extends Component {
     const bookDay = (Number(bookArr[0]) * 12) + (Number(bookArr[1])) + (Number(bookArr[2]) * 365);
     const day = bookDay - currentDay;
 
-    fetch(`prices/${day}`)
+    fetch(`/prices/${day}`)
       .then(res => res.json())
       .then((data) => {
         if (data.rows.length > 0) {

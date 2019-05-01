@@ -1,29 +1,16 @@
 const pg = require('pg');
 const redis = require('redis');
+const { login, password } = require('./archive/PGlogin');
 
 // ***** Using a Pool connection *****
 
 const db_PG = new pg.Pool({
-  host: 'localhost',
-  user: 'danslaptop',
-  database: 'hotel_pricing',
+  host: process.env.PGHOST || 'pricing.cj6wmj0g0c9p.us-east-2.rds.amazonaws.com',
+  user: process.env.PGUSER || login,
+  password: process.env.PASSWORD || password,
+  database: process.env.PGDATABASE || 'sdc_hotel_pricing',
   max: 50,
 });
-
-// ***** Using a Client connection *****
-
-// const login = require('./archive/login');
-
-// const conString = `postgres://${login}@localhost:5432/hotel_pricing`;
-
-// const db_PG = new pg.Client(conString);
-
-// db_PG.connect((err) => {
-//   if (err) console.log('ERROR!');
-//   else {
-//     console.log('hotel_pricing database connected...');
-//   }
-// });
 
 // ***** Connection to Redis cache *****
 
@@ -41,3 +28,19 @@ module.exports = {
   db_PG,
   client,
 };
+
+
+// ***** Using a Client connection *****
+
+// const login = require('./archive/login');
+
+// const conString = `postgres://${login}@localhost:5432/hotel_pricing`;
+
+// const db_PG = new pg.Client(conString);
+
+// db_PG.connect((err) => {
+//   if (err) console.log('ERROR!');
+//   else {
+//     console.log('hotel_pricing database connected...');
+//   }
+// });

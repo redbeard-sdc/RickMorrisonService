@@ -17,4 +17,4 @@ RUN npm install --build-from-source
 EXPOSE 3003
 
 # How do you start your app?
-CMD [ "npm", "run", "docker" ]
+CMD [ "npm", "run", "node" ]
