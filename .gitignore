@@ -1,6 +1,15 @@
 ## MAC files ##
 .DS_Store
 
+## Database stuff ##
+data.csv
+data-small.csv
+server/archive/CPUlogin.js
+server/archive/PGlogin.js
+server/archive/webApiKey.js
+server/archive/sdc-hotel-pricing-238420-7e59d551eda0.json
+newrelic.js
+
 ## NPM ##
 npm
 npm-debug.log

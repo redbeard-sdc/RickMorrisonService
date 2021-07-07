@@ -1,0 +1,12 @@
+config:
+  target: 'http://sdc-pricing-lb-1346766040.us-east-2.elb.amazonaws.com/'
+  phases:
+    - duration: 40
+      arrivalRate: 800
+  # defaults:
+  #   headers:
+  #     x-my-service-auth: '987401838271002188298567'
+scenarios:
+  - flow:
+    - get:
+        url: "/prices/555555"

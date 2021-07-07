@@ -28,6 +28,10 @@
   border: solid 1px rgb(260, 217, 0);
 }
 
+.spanImage {
+  width: 115px;
+}
+
 
 .viewDealText {
   font-weight: bold;
